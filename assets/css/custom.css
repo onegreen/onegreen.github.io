@@ -1,1 +1,17 @@
 /* It is recommended to place all your extra/additional CSS rules here */
+.logo
+{
+  color: #4dd965;
+  font-size: xx-large;
+}
+.logo .one
+{
+  letter-spacing: -2px;
+  font-weight: 200;
+}
+.logo .green
+{
+  font-weight: bolder;
+  word-spacing: 5px;
+  letter-spacing: -3px;
+}
