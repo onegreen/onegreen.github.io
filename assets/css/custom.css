@@ -5,16 +5,23 @@
 }
 .logo .one
 {
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   font-weight: 200;
 }
 .logo .green
 {
   font-weight: bolder;
-  word-spacing: 5px;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
 }
 .logo-large
 {
   font-size: xx-large;
+}
+.logo-large .one
+{
+  letter-spacing: -2px;
+}
+.logo-large .green
+{
+  letter-spacing: -3px;
 }
