@@ -2,7 +2,6 @@
 .logo
 {
   color: #4dd965;
-  font-size: xx-large;
 }
 .logo .one
 {
@@ -14,4 +13,8 @@
   font-weight: bolder;
   word-spacing: 5px;
   letter-spacing: -3px;
+}
+.logo-large
+{
+  font-size: xx-large;
 }
