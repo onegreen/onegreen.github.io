@@ -227,7 +227,7 @@ table {
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
     border-radius: 0;
-    font-family: 'open_sanslight', sans-serif;
+    font-family: 'Helvetica Neue', 'open_sanslight', sans-serif;
 }
 
 .btn-outline-inverse {
@@ -410,7 +410,7 @@ table {
     list-style: none;
     margin:0;
     padding:0;
-    font-family: 'open_sanslight', sans-serif;
+    font-family: 'Helvetica Neue', 'open_sanslight', sans-serif;
     font-size:0.86em;
     line-height:1.05;
     text-transform: lowercase;
@@ -585,7 +585,7 @@ table {
     margin:20px 5%;
     overflow: visible;
     min-height:1px;
-    font-family: 'open_sanslight', sans-serif;
+    font-family: 'Helvetica Neue', 'open_sanslight', sans-serif;
     -webkit-transform: translate3d(0,0,0);
 }
 
@@ -984,7 +984,7 @@ h6 {
     right:12%;
     text-align: right;
     position: absolute;
-    font-family: 'open_sanslight', sans-serif;
+    font-family: 'Helvetica Neue', 'open_sanslight', sans-serif;
     font-weight: bold;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
@@ -1700,7 +1700,7 @@ h6 {
     font-size: 0.9em;
     line-height: 1.1;
     text-align: center;
-    font-family: 'open_sanslight', sans-serif;
+    font-family: 'Helvetica Neue', 'open_sanslight', sans-serif;
 }
 
 .owl-carousel.hide-bullets .owl-pagination {
