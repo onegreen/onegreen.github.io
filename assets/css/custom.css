@@ -25,3 +25,9 @@
 {
   letter-spacing: -3px;
 }
+
+.bottom-content
+{
+	bottom:auto;
+	bottom:16%;
+}
