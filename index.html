@@ -69,7 +69,7 @@ ga('send', 'pageview');
         <!-- Menu Icon for smaller viewports -->
         <div id="mobile-menu-icon" class="visible-xs" onClick="toggle_main_menu();"><span class="glyphicon glyphicon-th"></span></div>
 
-        <ul id="main-menu">
+        <ul id="main-menu" class="main-menu">
           <li id="menu-item-text" class="menu-item scroll"><a href="#licenciamento-ambiental">Licenciamento Ambiental</a></li>
           <li id="menu-item-carousel" class="menu-item scroll"><a href="#beneficios">Benefícios</a></li>
           <li id="menu-item-grid" class="menu-item scroll"><a href="#funcionalidades">Funcionalidades</a></li>
@@ -352,14 +352,64 @@ ga('send', 'pageview');
 					O <span class="logo"><span class="one">one</span><span class="green">green</span></span> é aderente a todos processos de licenciamento ambiental, permitindo utilização desde pequenas intervenções ambientais a grandes complexos minerários e industriais. <br/> Faça como os clientes abaixo e conte com o <span class="logo"><span class="one">one</span><span class="green">green</span></span> para gestão do seu licenciamento ambiental.
 				</p>
                 <!-- grid -->
-                <section class="grid row clearfix clearfix-for-2cols">
-
-					  <img style="padding-top:4px" width="140" height="120" alt="Alumínio Brasileiro S/A" src="http://siteware.com.br/site/wp-content/uploads/2014/09/albras.jpeg">
-					  <img style="padding-top:4px" width="140" height="120" alt="Alunorte" src="http://siteware.com.br/site/wp-content/uploads/2014/09/alunorte.png">
-					  <img style="padding-top:4px" width="140" height="120" alt="AngloGold Ashanti" src="http://siteware.com.br/site/wp-content/uploads/2014/09/anglo.png">
-					  <img style="padding-top:4px" width="140" height="120" alt="Ferrous Resources do Brasil" src="http://siteware.com.br/site/wp-content/uploads/2014/09/ferrous.jpg">
-					  <img style="padding-top:4px" width="140" height="120" alt="Hydro" src="http://siteware.com.br/site/wp-content/uploads/2014/09/Hydro_logo-nova.png">
-
+                <section class="row row-inline-block text-center img-clientes">
+					<div class="col-md-4 box-hover">
+						<input class="box-hover-input" type="checkbox" name="clients" id="clientAlbras" />
+						<label for="clientAlbras"></label>
+						<div class="box-hover-group">
+							<img width="140" height="120" alt="Alumínio Brasileiro S/A" src="assets/images/other_images/clientes/albras_branco.png">
+							<div class="box-hover-item">
+								<img width="140" height="120" alt="Alumínio Brasileiro S/A" src="assets/images/other_images/clientes/albras.png">
+								<div class="box-hover-text">A Alumínio Brasileiro S/A é reconhecida internacionalmente pela qualidade do metal produzido. O sistema integrado de gestão norteia a busca pela excelência, o compromisso com as partes interessadas e assegura a manutenção das certificações ISO 9001 e 14001, OHSAS 18001 e SA 8000.</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 box-hover">
+						<input class="box-hover-input" type="checkbox" name="clients" id="clientAlunorte" />
+						<label for="clientAlunorte"></label>
+						<div class="box-hover-group">
+							<img width="140" height="120" alt="Alunorte" src="assets/images/other_images/clientes/alunorte_branco.png">
+							<div class="box-hover-item">
+								<img width="140" height="120" alt="Alunorte" src="assets/images/other_images/clientes/alunorte.png">
+								<div class="box-hover-text">A Alunorte é a maior refinaria de alumina do mundo. Localizada em Barcarena-PA, a empresa gera mais de 4 mil empregos diretos e indiretos. Em média, 14% da produção são destinados ao mercado interno e os outros 86% à exportação, contemplando o Oriente Médio, América do Norte e Europa.</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 box-hover">
+						<input class="box-hover-input" type="checkbox" name="clients" id="clientAngloGold" />
+						<label for="clientAngloGold"></label>
+						<div class="box-hover-group">
+							<img width="140" height="120" alt="AngloGold Ashanti" src="assets/images/other_images/clientes/anglo_branco.png">
+							<div class="box-hover-item">
+								<img width="140" height="120" alt="AngloGold Ashanti" src="assets/images/other_images/clientes/anglo.png">
+								<div class="box-hover-text">A AngloGold Ashanti é uma das maiores produtoras de ouro do mundo. Possui 21 operações em 10 países, distribuídos em 4 continentes. O Brasil é responsável por 9% da produção. As operações são certificadas pela ISO 14001 e OHSAS 18001. É signatária do Código Internacional de Cianeto.</div>
+							</div>
+						</div>
+					</div>
+                </section>
+                <section class="row row-inline-block text-center img-clientes">
+					<div class="col-md-4 box-hover">
+						<input class="box-hover-input" type="checkbox" name="clients" id="clientFerrous" />
+						<label for="clientFerrous"></label>
+						<div class="box-hover-group">
+							<img width="140" height="120" alt="Ferrous Resources do Brasil" src="assets/images/other_images/clientes/ferrous_branco.png">
+							<div class="box-hover-item">
+								<img width="140" height="120" alt="Ferrous Resources do Brasil" src="assets/images/other_images/clientes/ferrous.png">
+								<div class="box-hover-text">A Ferrous Resources do Brasil extrai e beneficia minério de ferro no Quadrilátero Ferrífero de Minas Gerais. Com sede em Belo Horizonte, a empresa aposta na inovação, buscando aliar avançadas tecnologias a uma atuação responsável e comprometida com o desenvolvimento sustentável.</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 box-hover">
+						<input class="box-hover-input" type="checkbox" name="clients" id="clientHydro" />
+						<label for="clientHydro"></label>
+						<div class="box-hover-group">
+							<img width="140" height="120" alt="Hydro" src="assets/images/other_images/clientes/hydro_branco.png">
+							<div class="box-hover-item">
+								<img width="140" height="120" alt="Hydro" src="assets/images/other_images/clientes/hydro.png">
+								<div class="box-hover-text">A Hydro é uma companhia norueguesa, de atuação global, que fornece alumínio e produtos derivados. Ao assumir as operações de bauxita, alumina e alumínio da Vale, no Brasil, integrou toda a cadeia de valores – desde a extração da matéria prima até a manufatura dos produtos de alumínio.</div>
+							</div>
+						</div>
+					</div>
                 </section><!-- end: grid -->
 
             </div><!-- .col-sm-11 -->
@@ -472,6 +522,14 @@ ga('send', 'pageview');
     <!--[if lt IE 9]>
     <script>contact_form_IE9_placeholder_fix();</script>
     <![endif]-->
+	
+    <script>
+		$(document).ready(function(){
+			$('.box-hover').find('label').click(function(){
+				$('body').toggleClass('modal-open');
+			});
+		});
+	</script>
 
   </body>
 </html>

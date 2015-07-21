@@ -31,3 +31,161 @@
 	bottom:auto;
 	bottom:16%;
 }
+
+.row-inline-block {
+	font-size: 0;
+}
+.row-inline-block [class*="col-"] {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+	.row-inline-block [class*="col-"] {
+		display: block;
+	}
+}
+
+
+#clientes .img-clientes {
+}
+#clientes .img-clientes img {
+}
+
+.box-hover {
+	position: relative;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.box-hover label:before,
+.box-hover label:after,
+.box-hover .box-hover-group,
+.box-hover .box-hover-group .box-hover-item  {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.box-hover .box-hover-item {
+	text-align: center;
+}
+.box-hover .box-hover-item .box-hover-text {
+	text-align: left;
+}
+.box-hover .box-hover-item,
+.box-hover .box-hover-input {
+	display: none;
+}
+
+@media screen and (min-width: 790px) {
+	.box-hover .box-hover-item {
+		display: none;
+		background: #f6f6f6;
+		padding: 0 26px 30px;
+		font-weight: 400;
+		font-family: "dosis", sans-serif;
+		font-size: 14px;
+		line-height: 16px;
+		color: #455560;
+		position: absolute;
+		top: -10px;
+		left: -5%;
+		right: -5%;
+		z-index: 9;
+		-webkit-box-shadow: 4px 4px 6px #777;
+		box-shadow: 4px 4px 6px #777;
+	}
+	.box-hover:hover .box-hover-item {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	.box-hover label {
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	.box-hover .box-hover-group {
+		border-radius: 40px;
+	}
+	.box-hover .box-hover-item .box-hover-text {
+		text-align: center;
+	}
+	.box-hover .box-hover-input:checked ~ .box-hover-group {
+		position: fixed;
+		top: 20%;
+		bottom: 20%;
+		left: 10%;
+		right: 10%;
+		z-index: 10000;
+		
+		background-color: #FFF;
+		border-radius: 4px;
+		padding: 10px;
+		text-align: center;
+	}
+	.box-hover .box-hover-input:checked + label {
+		bottom: 100%;
+	}
+	.box-hover .box-hover-input:checked + label:after {
+		content: "x";
+		position: fixed;
+		z-index: 11000;
+		top: 20%;
+		right: 10%;
+		color: #FFF;
+		margin: -15px -15px 0 0;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		border-radius: 50%;
+		background-color: #000;
+		border: 2px solid #FFF;
+		box-shadow: -2px 2px 10px #000;
+	}
+	.box-hover .box-hover-input:checked + label:before {
+		content: "";
+		position: fixed;
+		z-index: 9000;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(0,0,0,0.5);
+	}
+	.box-hover .box-hover-input:checked ~ .box-hover-group .box-hover-item {
+		display: block;
+		height: 100%;
+	}
+	.box-hover .box-hover-input:checked ~ .box-hover-group .box-hover-item .box-hover-text {
+		color: #444;
+		overflow: auto;
+		height: calc(100% - 130px);
+	}
+	.box-hover .box-hover-input:checked ~ .box-hover-group > img {
+		display: none;
+	}
+}
+@media screen and (max-width: 790px) and (orientation: landscape) {
+	.box-hover .box-hover-input:checked ~ .box-hover-group {
+		top: 10%;
+		bottom: 10%;
+	}
+	.box-hover .box-hover-input:checked + label:after {
+		top: 10%;
+	}
+	.box-hover .box-hover-input:checked ~ .box-hover-group .box-hover-item .box-hover-text {
+		height: auto;
+		max-height: 100%;
+		width: calc(100% - 150px);
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+		margin-left: 5px;
+	}
+}

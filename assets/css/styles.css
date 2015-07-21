@@ -586,7 +586,7 @@ table {
     overflow: visible;
     min-height:1px;
     font-family: 'Helvetica Neue', 'open_sanslight', sans-serif;
-    -webkit-transform: translate3d(0,0,0);
+    /*-webkit-transform: translate3d(0,0,0);*/
 }
 
     @media (min-width: 768px) {
