@@ -182,7 +182,7 @@ Pedimos que tome conhecimento.'
 
 INSERT INTO TAUTEML (IdeAutEml, IdeEmp, Ord, Des, Tip, TblNme, TplNme, TipAge, TipFlt, ExcTme, DiaExc, DtaBse, EnvIme, DiaEntEnv, NumEnv, Msg, Atv, UpdTme)
 VALUES
-(1110000000017, 1110000000001, 2016, 'onegreen - Aviso de Proximidade de Vencimento da Notificacao de Abertura do Processo', 1, 'tLicAmb', 'Aviso de Proximidade de Vencimento da Notificacao de Abertura do Processo', 3, 0, null, null, null, 1, 0, 1, '@mmo', 1, GETDATE());
+(1110000000017, 1110000000001, 2016, 'onegreen - Aviso de Proximidade de Vencimento da Notificacao de Abertura do Processo', 1, 'tLicAmb', 'Aviso de Proximidade de Vencimento da Notificacao de Abertura do Processo', 3, 0, null, null, null, 1, 0, 1, @mmo, 1, GETDATE());
 
 
 END
