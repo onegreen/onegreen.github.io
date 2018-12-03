@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="geoxml3.js"></script>
+    <title>FileCatch</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div id="page-wrapper">
+            <div>
+                <h6 class="text-center">Selecione o arquivo KML ou KMZ:</h6>
+
+                <div class="input-group mb-3 col-6  mx-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fileInput" accept=".kml, .kmz, .xml">
+                        <label class="custom-file-label" for="inputGroupFile01">Procurar arquivo</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <pre class="text-center" id="fileResultArea"></pre>
+
+            <a class="d-flex justify-content-center" href="SimpleMap.html"><button class="btn btn-primary" type="submit" disabled>Carregar mapa</button></a>
+        </div>
+
+    </div>
+
+    <script>
+
+        var arrayMarkers = [];
+        var arrayPolygons = [];
+
+
+        //var arrayPolygonContent = [];
+        //var arrayMarkerContent = [];
+
+        //var arrayMarkerTypes = [];
+        //var arrayPolygonTypes = [];
+
+        window.onload = function () {
+            var fileInput = document.getElementById('fileInput');
+            var fileResultArea = document.getElementById('fileResultArea');
+
+            fileInput.addEventListener('change', function (e) {
+                var file = fileInput.files[0];
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    fileResultArea.innerText = "Arquivo carregado com sucesso";
+                    $('button').prop("disabled", false);
+
+                    var geoXml = new geoXML3.parser();
+                    geoXml.parseKmlString(reader.result);
+
+                    for (let c = 0; c < geoXml.docs[0].gpolygons.length; c++) {
+                        arrayPolygons.push(geoXml.docs[0].gpolygons[c].getPath().getArray());
+
+                        /*
+                        if (typeof geoXml.docs[0].gpolygons[c].infoWindow.content == 'undefined') {
+                            arrayPolygonContent.push("Sem informações");
+                        }
+                        else {
+                            arrayPolygonContent.push(geoXml.docs[0].gpolygons[c].infoWindow.content);
+                        }
+                        */
+                    }
+
+                    for (let c = 0; c < geoXml.docs[0].markers.length; c++) {
+                        arrayMarkers.push(geoXml.docs[0].markers[c].getPosition());
+
+                        /*
+                        if (typeof geoXml.docs[0].markers[c].infoWindow.content == 'undefined') {
+                            arrayMarkerContent.push("Sem informações");
+                        }
+                        else {
+                            arrayMarkerContent.push(geoXml.docs[0].markers[c].infoWindow.content);
+                        }
+                        */
+                    }
+
+                    let JsonPolygons = JSON.stringify(arrayPolygons);
+                    let JsonMarkers = JSON.stringify(arrayMarkers);
+                    //let JsonPolygonContent = JSON.stringify(arrayPolygonContent);
+                    //let JsonMarkerContent = JSON.stringify(arrayMarkerContent);
+
+                    localStorage.setItem("polygonsKmlStorage", JsonPolygons);
+                    localStorage.setItem("markersKmlStorage", JsonMarkers);
+                    //localStorage.setItem("polygonContentStorage", JsonPolygonContent);
+                    //localStorage.setItem("markerContentStorage", JsonMarkerContent);
+                }
+
+                reader.readAsText(file);
+
+            });
+
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcC7NWA5p_om_2gacsmqleB2KkDlaXSpU" async defer></script>
+</body>
+
+</html>

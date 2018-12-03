@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="SimpleMap_style.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="geoxml3.js"></script>
+    <title>MapsTeste</title>
+</head>
+
+<body>
+    <div>
+        <h2>Arquivo KML carregado</h2>
+    </div>
+
+    <div id="map" class="mx-auto"></div>
+
+    <script>
+        var coordPolygons = JSON.parse(localStorage.getItem("polygonsKmlStorage"));
+        var coordMarkers = JSON.parse(localStorage.getItem("markersKmlStorage"));
+
+        localStorage.removeItem('polygonsKmlStorage');
+        localStorage.removeItem('markersKmlStorage');
+
+        var centerCoordinates;
+
+        if (typeof coordMarkers[0] != 'undefined') {
+            centerCoordinates = coordMarkers[0];
+        }
+        else {
+            centerCoordinates = coordPolygons[0][0];
+        }
+
+        //var polygonContent = JSON.parse(localStorage.getItem("polygonContentStorage"));
+        //var markerContent = JSON.parse(localStorage.getItem("markerContentStorage"));
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: centerCoordinates,
+                zoom: 14
+            });
+
+            var infoWindow = new google.maps.InfoWindow();
+
+            var i = 0;
+            for (let value of coordMarkers) {
+                var marker = new google.maps.Marker({
+                    position: value,
+                    icon: "http://www.googlemapsmarkers.com/v1/I/ffffff/",
+                    map: map
+                });
+
+
+                google.maps.event.addListener(marker, 'click', (function (marker) {
+                    return function () {
+                        infoWindow.setContent("Sem informações");
+                        infoWindow.open(map, marker);
+                    }
+                })(marker));
+
+
+                i++;
+            }
+
+            var infoWindow = new google.maps.InfoWindow();
+            var c = 0;
+            var polygon;
+            //var content = Array.from(polygonContent);
+            for (let value of coordPolygons) {
+                polygon = new google.maps.Polygon({
+                    paths: value,
+                    strokeColor: '#081915',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#081915',
+                    fillOpacity: 0.35,
+                    map: map
+                });
+
+
+                var bounds = new google.maps.LatLngBounds();
+                for (let k = 0; k < value.length; k++) {
+                    bounds.extend(value[k]);
+                }
+
+                google.maps.event.addListener(polygon, 'click', (function (polygon, bounds) {
+
+                    return function () {
+                        infoWindow.setContent("Sem informações");
+                        infoWindow.setPosition(bounds.getCenter());
+                        infoWindow.open(map, polygon);
+                    }
+                })(polygon, bounds));
+
+                c++;
+
+            }
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcC7NWA5p_om_2gacsmqleB2KkDlaXSpU&libraries=drawing,geometry,places&callback=initMap"
+        async defer></script>
+</body>
+
+</html>
