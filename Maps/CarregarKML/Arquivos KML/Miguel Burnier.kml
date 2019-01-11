@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Campina.kml</name>
+	<Style id="PolyStyle0020">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>bfc5fad3</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="PolyStyle0026">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#PolyStyle0020</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#PolyStyle0025</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="PolyStyle0025">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>bfc5fad3</color>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00002">
+		<name>Campina</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Miguel Burnier</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Id</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Nome</td>
+
+<td>Miguel Burnier</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Área</td>
+
+<td>0</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#PolyStyle0026</styleUrl>
+		<MultiGeometry>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-43.78007263645091,-20.44097244039723,0 -43.78011437369405,-20.44094941082755,0 -43.78011437369405,-20.44094941082755,0 -43.78040827497033,-20.44119032356999,0 -43.78040827497033,-20.44119032356999,0 -43.78048691880199,-20.44193397071105,0 -43.78048691880199,-20.44193397071105,0 -43.78047759399303,-20.443114897066,0 -43.78047759399303,-20.443114897066,0 -43.78009089195358,-20.44389838741978,0 -43.78009089195358,-20.44389838741978,0 -43.77977692465029,-20.44441369837597,0 -43.77977692465029,-20.44441369837597,0 -43.77917925314786,-20.44517913952912,0 -43.77917925314786,-20.44517913952912,0 -43.77810508149743,-20.44563603188345,0 -43.77810508149743,-20.44563603188345,0 -43.77790399856248,-20.44612559271294,0 -43.77790399856248,-20.44612559271294,0 -43.77790095308487,-20.44651038837581,0 -43.77790095308487,-20.44651038837581,0 -43.7774874280037,-20.44714442086857,0 -43.7774874280037,-20.44714442086857,0 -43.7768783813668,-20.44756476468223,0 -43.7768783813668,-20.44756476468223,0 -43.775817746406,-20.44808808444873,0 -43.775817746406,-20.44808808444873,0 -43.77567720476763,-20.44804728666684,0 -43.77567720476763,-20.44804728666684,0 -43.77546607331418,-20.44775214138417,0 -43.77546607331418,-20.44775214138417,0 -43.77502983778675,-20.4476959914579,0 -43.77502983778675,-20.4476959914579,0 -43.77473193208155,-20.44795928372089,0 -43.77473193208155,-20.44795928372089,0 -43.77425027886202,-20.44830089801087,0 -43.77425027886202,-20.44830089801087,0 -43.77325229974174,-20.44802847125181,0 -43.77325229974174,-20.44802847125181,0 -43.7724019327745,-20.44690783099872,0 -43.7724019327745,-20.44690783099872,0 -43.77217207886439,-20.4456986814186,0 -43.77217207886439,-20.4456986814186,0 -43.77232976211995,-20.44535478660251,0 -43.77232976211995,-20.44535478660251,0 -43.7727298497671,-20.4446410549402,0 -43.7727298497671,-20.4446410549402,0 -43.77266025182302,-20.44314959099706,0 -43.77266025182302,-20.44314959099706,0 -43.77277641354814,-20.44271251578145,0 -43.77277641354814,-20.44271251578145,0 -43.77291969053731,-20.44240832714496,0 -43.77291969053731,-20.44240832714496,0 -43.77300434711961,-20.44061753635942,0 -43.77300434711961,-20.44061753635942,0 -43.77340136246909,-20.44028859714313,0 -43.77340136246909,-20.44028859714313,0 -43.7737971121182,-20.44011888260974,0 -43.7737971121182,-20.44011888260974,0 -43.7742365901553,-20.43976370149106,0 -43.7742365901553,-20.43976370149106,0 -43.77472914304342,-20.4398202490958,0 -43.77472914304342,-20.4398202490958,0 -43.7756401438043,-20.44039725275481,0 -43.7756401438043,-20.44039725275481,0 -43.77692062142804,-20.44056549356586,0 -43.77692062142804,-20.44056549356586,0 -43.77766649919224,-20.44065035260977,0 -43.77766649919224,-20.44065035260977,0 -43.77884796668815,-20.4408709620421,0 -43.77884796668815,-20.4408709620421,0 -43.7795378216514,-20.44091561120559,0 -43.78007263645091,-20.44097244039723,0 -43.78007263645091,-20.44097244039723,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</MultiGeometry>
+	</Placemark>
+
+	    <Placemark>
+        <name>Example placemark</name>
+        <description>Point at the height of the underlying terrain.</description>
+        <Point>
+            <coordinates>-43.77283988971385,-20.4426211776483,0</coordinates>
+        </Point>
+    </Placemark>
+
+    <Placemark>
+        <name>Example placemark</name>
+        <description>Point at the height of the underlying terrain.</description>
+        <Point>
+            <coordinates>-43.77408443469676,-20.444672008623783,0</coordinates>
+        </Point>
+    </Placemark>
+
+</Document>
+</kml>

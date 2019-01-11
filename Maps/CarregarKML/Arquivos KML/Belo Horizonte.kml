@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Shapes</name><Style id="thickLine"><LineStyle><width>2.5</width></LineStyle></Style>
+<Style id="transparent50Poly"><PolyStyle><color>7fffffff</color></PolyStyle></Style>
+
+    <Placemark>
+        <name>Example placemark</name>
+        <description>Point at the height of the underlying terrain.</description>
+        <Point>
+            <coordinates>-43.973761453115,-19.90527452622226,0</coordinates>
+        </Point>
+    </Placemark>
+
+    <Placemark>
+        <name>Example placemark</name>
+        <description>Point at the height of the underlying terrain.</description>
+        <Point>
+            <coordinates>-43.97054280229713,-19.90483065971849,0</coordinates>
+        </Point>
+    </Placemark>
+
+<Placemark>
+<name>Shape</name>
+<description>Shape</description>
+<Polygon><outerBoundaryIs><LinearRing><coordinates></coordinates></LinearRing></outerBoundaryIs></Polygon><styleUrl>#transparent50Poly</styleUrl></Placemark>
+<Placemark>
+<name>Shape</name>
+<description>Shape</description>
+<Polygon><outerBoundaryIs><LinearRing><coordinates>-43.97734678632827,-19.907885433431264,0 -43.975716003247214,-19.906029286760496,0 -43.97365606672378,-19.90756262687883,0 -43.97734678632827,-19.907885433431264,0 </coordinates></LinearRing></outerBoundaryIs></Polygon><styleUrl>#transparent50Poly</styleUrl></Placemark>
+<Placemark>
+<name>Shape</name>
+<description>Shape</description>
+<Polygon><outerBoundaryIs><LinearRing><coordinates>-43.97159613020034,-19.906755607616272,0 -43.96730459577651,-19.904334525131176,0 -43.966703780957175,-19.907159117762095,0 -43.97159613020034,-19.906755607616272,0 </coordinates></LinearRing></outerBoundaryIs></Polygon><styleUrl>#transparent50Poly</styleUrl></Placemark>
+<Placemark>
+<name>Shape</name>
+<description>Shape</description>
+<Polygon><outerBoundaryIs><LinearRing><coordinates>-43.97314108259292,-19.910629262533227,0 -43.971681960888816,-19.907481925137823,0 -43.969965347119285,-19.90869244693073,0 -43.97314108259292,-19.910629262533227,0 </coordinates></LinearRing></outerBoundaryIs></Polygon><styleUrl>#transparent50Poly</styleUrl></Placemark>
+</Document>
+</kml>
