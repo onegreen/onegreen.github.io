@@ -12,22 +12,36 @@ info:
 
     <!-- ReDoc-Inject: <security-definitions> -->
 
-    Para autorização das suas requisições, você precisa de um Token API. Você pode encontrá-lo
-    entrando dentro do sistema e gerando seu Token. Peça ajuda ao suporte para ajudá-lo
-    Esse token é sua senha, então guarde com cuidado!
+    Para autorização das suas requisições, você precisa de um Token API.
+    Para gerar o seu token, siga os passos abaixo:
+
+    No canto direito superior, clique na sua foto ou nas iniciais do seu nome:
+    <img src="./assets/images/1.png" />
+
+    Clique no seu nome:
+    <img src="./assets/images/2.png" />
+
+    Clique no botão para 'Gerar token API':
+    <img src="./assets/images/3.png" />
+
+    Clique 'Sim' na mensagem de confirmação:
+    <img src="./assets/images/4.png" />
+
+    Clique no botão marcado para copiar o token para sua área de transferência:
+    <img src="./assets/images/5.png" />
 
     Adicione esse token ao cabeçalho `Authorization` da sua requisição utilizando
     o schema `Bearer`, como por exemplo, em cURL:
 
     ```bash
-    curl -H 'Authorization: Bearer your-token-here' https://api.agendor.com.br/v3/users/me
+    curl -H 'Authorization: Bearer your-token-here' https://cloud.onegreen.com.br/{cliente}/
     ```
 
     Se a sua autorização falhar, a API retornará com o código `403` e a seguinte mensagem:
 
     ```json
     {
-        \"Message\": \"Invalid user token\"
+        "Message": "Invalid user token"
     }
     ```
 
@@ -38,24 +52,17 @@ info:
     email: suporte@onegreen.com.br
     url: https://onegreen.com.br
   x-logo:
-    url: 'logo.jpg'
+    url: './assets/images/logo.jpg'
     altText: Onegreen logo
 tags:
   - name: unidades gerenciais
     description: |
       As Unidades Gerenciais são utilizadas como a estrutura hierárquica da sua empresa.
       Utilize esses endpoints para buscar, criar e atualizar uma Unidade Gerencial existente
-  - name: unidadegerencial_model
-    x-displayName: Modelo Unidade Gerencial
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/UnidadeGerencial" />
 x-tagGroups:
   - name: Manutenção
     tags:
       - unidades gerenciais
-  - name: Modelos
-    tags:
-      - unidadegerencial_model
 paths:
   /apis/v1/unidadesgerenciais:
     get:
@@ -322,4 +329,3 @@ components:
       type: apiKey
       in: header
       name: Authorization
-
