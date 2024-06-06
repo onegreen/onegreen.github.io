@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Onegreen API</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" sizes="16x16" />
+
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <style data-styled="" data-styled-version="4.4.1"></style>
+  </head>
+  <body>
+    <div id="redoc-container"></div>
+    <script src="redoc.standalone.js"></script>
+    <script>
+      Redoc.init(
+        'onegreen.yaml',
+        {
+          hideDownloadButton: true,
+          menuToggle: true,
+          pathInMiddlePanel: true,
+          requiredPropsFirst: true,
+          theme: {
+            colors: {
+              primary: {
+                main: '#6dc068',
+              },
+            },
+            typography: {
+              fontFamily: 'Rubik, sans-serif',
+              fontSize: '16px',
+              headings: {
+                fontFamily: 'Rubik, sans-serif',
+                fontWeight: 500,
+              },
+            },
+            logo: {
+              gutter: '20px',
+            },
+          },
+        },
+        document.getElementById('redoc-container')
+      );
+    </script>
+  </body>
+</html>

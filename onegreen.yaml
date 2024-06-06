@@ -1,0 +1,325 @@
+openapi: 3.1.0
+servers:
+  - url: //cloud.onegreen.com.br/{cliente}
+    description: Consultar com o suporte qual {cliente} utilizar
+info:
+  description: |
+    # Introdução
+    Bem-vindo à documentação da nossa API! O **Onegreen** é um software especializado para a gestão dos processos de licenciamento ambiental,
+    condicionantes, programas ambientais e tarefas. Fácil e prático de usar, você pode acessá-lo de qualquer lugar e a qualquer hora.
+
+    ## Autenticação
+
+    <!-- ReDoc-Inject: <security-definitions> -->
+
+    Para autorização das suas requisições, você precisa de um Token API. Você pode encontrá-lo
+    entrando dentro do sistema e gerando seu Token. Peça ajuda ao suporte para ajudá-lo
+    Esse token é sua senha, então guarde com cuidado!
+
+    Adicione esse token ao cabeçalho `Authorization` da sua requisição utilizando
+    o schema `Bearer`, como por exemplo, em cURL:
+
+    ```bash
+    curl -H 'Authorization: Bearer your-token-here' https://api.agendor.com.br/v3/users/me
+    ```
+
+    Se a sua autorização falhar, a API retornará com o código `403` e a seguinte mensagem:
+
+    ```json
+    {
+        \"Message\": \"Invalid user token\"
+    }
+    ```
+
+  version: v1
+  title: Onegreen API
+  contact:
+    name: Suporte Onegreen
+    email: suporte@onegreen.com.br
+    url: https://onegreen.com.br
+  x-logo:
+    url: 'logo.jpg'
+    altText: Onegreen logo
+tags:
+  - name: unidades gerenciais
+    description: |
+      As Unidades Gerenciais são utilizadas como a estrutura hierárquica da sua empresa.
+      Utilize esses endpoints para buscar, criar e atualizar uma Unidade Gerencial existente
+  - name: unidadegerencial_model
+    x-displayName: Modelo Unidade Gerencial
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/UnidadeGerencial" />
+x-tagGroups:
+  - name: Manutenção
+    tags:
+      - unidades gerenciais
+  - name: Modelos
+    tags:
+      - unidadegerencial_model
+paths:
+  /apis/v1/unidadesgerenciais:
+    get:
+      tags:
+        - unidades gerenciais
+      summary: Retornar todas as Unidades Gerenciais
+      operationId: retornarTodasUnidadesGerenciais
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UnidadeGerencial'
+        '403':
+          description: Token inválido
+      security:
+        - Bearer: []
+    post:
+      tags:
+        - unidades gerenciais
+      summary: Adicionar uma nova Unidade Gerencial
+      operationId: adicionarUnidadeGerencial
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnidadeGerencial'
+        '400':
+          description: Request body is missing
+        '403':
+          description: Token inválido | Sem acesso ao recurso
+      security:
+        - Bearer: []
+      requestBody:
+        $ref: '#/components/requestBodies/CreateUnidadeGerencial'
+  '/apis/v1/unidadesgerenciais/{id}':
+    put:
+      tags:
+        - unidades gerenciais
+      summary: Atualiza a sigla ou descrição da Unidade Gerencial
+      operationId: atualizarUnidadeGerencial
+      parameters:
+        - name: id
+          in: path
+          description: Identificador da Unidade Gerencial a ser atualizada
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnidadeGerencial'
+        '400':
+          description: Request body is missing
+        '403':
+          description: Token inválido | Sem acesso ao recurso
+        '404':
+          description: Not found
+      security:
+        - Bearer: []
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateUnidadeGerencial'
+  '/apis/v1/unidadesgerenciais/{id}/unidadesuperior':
+    put:
+      tags:
+        - unidades gerenciais
+      summary: Vincular a Unidade Gerencial a outra Unidade Gerencial
+      operationId: vincularUnidadeSuperior
+      parameters:
+        - name: id
+          in: path
+          description: Identificador da Unidade Gerencial a ser atualizada
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnidadeGerencial'
+        '400':
+          description: Request body is missing
+        '403':
+          description: Token inválido | Sem acesso ao recurso
+        '404':
+          description: Not found
+      security:
+        - Bearer: []
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateUnidadeSuperiorUnidadeGerencial'
+    delete:
+      tags:
+        - unidades gerenciais
+      summary: Desvincular a Unidade Gerencial de outra Unidade Gerencial
+      operationId: descvincularUnidadeSuperior
+      parameters:
+        - name: id
+          in: path
+          description: Identificador da Unidade Gerencial a ser atualizada
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnidadeGerencial'
+        '403':
+          description: Token inválido | Sem acesso ao recurso
+        '404':
+          description: Not found
+      security:
+        - Bearer: []
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      patternProperties:
+        ^S_\\w+\\.[1-9]{2,4}$:
+          description: The measured skill for hunting
+          if:
+            x-displayName: fieldName === 'status'
+          else:
+            minLength: 1
+            maxLength: 10
+          then:
+            format: url
+            type: string
+            enum:
+              - success
+              - failed
+        ^O_\\w+\\.[1-9]{2,4}$:
+          type: object
+          properties:
+            nestedProperty:
+              type: [string, boolean]
+              description: The measured skill for hunting
+              default: lazy
+              example: adventurous
+              enum:
+                - clueless
+                - lazy
+                - adventurous
+                - aggressive
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+    Id:
+      type: integer
+      format: int64
+      readOnly: true
+    UnidadeGerencial:
+      type: object
+      required:
+        - Sigla
+        - Descricao
+      properties:
+        Id:
+          description: ID da Unidade Gerencial
+          $ref: '#/components/schemas/Id'
+        Sigla:
+          description: A sigla da sua Unidade Gerencial
+          type: string
+          example: TI OG
+        Descricao:
+          description: A descrição da sua Unidade Gerencial
+          type: string
+          example: Departamento de TI do Onegreen
+        UnidadeSuperior:
+          description: A sigla da Unidade Gerencial superior à esta Unidade
+          type: string
+          example: OG
+    CreateUnidadeGerencial:
+      type: object
+      required:
+        - Sigla
+        - Descricao
+      properties:
+        Sigla:
+          description: A sigla da sua Unidade Gerencial
+          type: string
+          example: TI OG
+        Descricao:
+          description: A descrição da sua Unidade Gerencial
+          type: string
+          example: Departamento de TI do Onegreen
+        UnidadeSuperior:
+          description: A sigla da Unidade Gerencial superior à esta Unidade
+          type: string
+          example: OG
+    UpdateUnidadeGerencial:
+      type: object
+      required:
+        - Sigla
+        - Descricao
+      properties:
+        Sigla:
+          description: A sigla da sua Unidade Gerencial
+          type: string
+          example: TI OG
+        Descricao:
+          description: A descrição da sua Unidade Gerencial
+          type: string
+          example: Departamento de TI do Onegreen
+    UpdateUnidadeSuperiorUnidadeGerencial:
+      type: object
+      required:
+        - UnidadeSuperior
+      properties:
+        UnidadeSuperior:
+          description: A sigla da Unidade Gerencial superior à esta Unidade
+          type: string
+          example: OG
+  requestBodies:
+    CreateUnidadeGerencial:
+      content:
+        application/json:
+          schema:
+            title: Unidade Gerencial
+            description: ''
+            $ref: '#/components/schemas/CreateUnidadeGerencial'
+      description: Objeto da Unidade Gerencial que precisa ser adicionada
+      required: true
+    UpdateUnidadeGerencial:
+      content:
+        application/json:
+          schema:
+            title: Unidade Gerencial
+            description: ''
+            $ref: '#/components/schemas/UpdateUnidadeGerencial'
+      description: Objeto da Unidade Gerencial que precisa ser atualizada
+      required: true
+    UpdateUnidadeSuperiorUnidadeGerencial:
+      content:
+        application/json:
+          schema:
+            title: Unidade Gerencial
+            description: ''
+            $ref: '#/components/schemas/UpdateUnidadeSuperiorUnidadeGerencial'
+      description: Objeto da Unidade Gerencial que precisa ser atualizada
+      required: true
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      in: header
+      name: Authorization
+
